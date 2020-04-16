@@ -25,7 +25,7 @@ function Get-UMSPropertyCast
       $CastedPropertyColl = [ordered]@{ }
       foreach ($StringProperty in ($APIObject | Get-Member -MemberType NoteProperty | Sort-Object -Property Name))
       {
-        $StringPropertyName = ($StringProperty.Name).Replace(($StringProperty.Name)[0], ([String]($StringProperty.Name)[0]).ToUpper())
+        $StringPropertyName = ($StringProperty.Name) -replace '^\w{1,1}', ([String]$StringProperty.Name[0]).ToUpper()
         if ([String]$APIObject.($StringPropertyName))
         {
           switch ($StringPropertyName)
