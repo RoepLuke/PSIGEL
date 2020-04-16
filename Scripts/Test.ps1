@@ -12,14 +12,8 @@ $PSDefaultParameterValues += @{
   '*-UMS*:WebSession' = New-UMSAPICookie
 }
 
-$Result = Get-UMSDevice -Filter details
-#$Result = Get-UMSDevice
-#$Result = Get-UMSDevice -Filter online
-#$Result = Get-UMSDevice -Filter shadow
-#$Result | ogv
-$Result[0]
-#$Result[0].shadowSecret.GetType()
-#$Result[0].firmwareID.GetType()
+$Result = Get-UMSDeviceAssignment -Id 505
+$Result
 
 <#
 
