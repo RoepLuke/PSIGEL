@@ -8,20 +8,96 @@ $PSDefaultParameterValues = @{
   '*-UMS*:Confirm'              = $False
   #'*-UMS*:SecurityProtocol'     = 'Tls'
 }
+$PSDefaultParameterValues += @{
+  '*-UMS*:WebSession' = New-UMSAPICookie
+}
 
-$WebSession = New-UMSAPICookie
-
-
-$WebSession.Cookies.GetCookies('https://igelrmserver').Name
-
-
+$Result = Get-UMSDevice -Filter details
+#$Result = Get-UMSDevice
+#$Result = Get-UMSDevice -Filter online
+#$Result = Get-UMSDevice -Filter shadow
+#$Result | ogv
+$Result[0]
+#$Result[0].shadowSecret.GetType()
+#$Result[0].firmwareID.GetType()
 
 <#
-$PSDefaultParameterValues += @{
-  '*-UMS*:WebSession' = $WebSession
-}
-#>
 
+$StringPropertyColl = @{
+  'Int'      = @(
+    'batteryLevel',
+    'cpuSpeed',
+    'firmwareID',
+    'flashSize',
+    'id',
+    'memorySize',
+    'monitor1WeekOfManufacture',
+    'monitor1YearOfManufacture',
+    'monitor2WeekOfManufacture',
+    'monitor2YearOfManufacture',
+    'monitorSize1',
+    'monitorSize2',
+    'networkSpeed',
+    'parentID'
+  )
+  'Int64'    = @(
+    'totalUptime',
+    'totalUsagetime'
+  )
+  'Datetime' = @(
+    'biosDate',
+    'lastBoottime'
+  )
+  'Bool'     = @(
+    'movedToBin',
+    'online'
+  )
+}
+$APIObjectColl = Get-UMSDevice -Filter details
+$APIObjectColl.GetType()
+$APIObjectColl[0].GetType()
+
+$Result = foreach ($APIObject in $APIObjectColl)
+{
+  $CastedPropertyColl = @{ }
+  foreach ($StringProperty In $APIObject | Get-Member -MemberType NoteProperty)
+  {
+    switch ($StringProperty.Name)
+    {
+      ( { $_ -in $StringPropertyColl.Int })
+      {
+        $CastedPropertyColl.Add($StringProperty.Name, [Int]$APIObject.($StringProperty.Name))
+      }
+      ( { $_ -in $StringPropertyColl.Int64 })
+      {
+        $CastedPropertyColl.Add($StringProperty.Name, [System.ComponentModel.Int64Converter]$APIObject.($StringProperty.Name))
+      }
+      ( { $_ -in $StringPropertyColl.Datetime })
+      {
+        $CastedPropertyColl.Add($StringProperty.Name, [System.Convert]::ToDateTime($APIObject.($StringProperty.Name)))
+      }
+      ( { $_ -in $StringPropertyColl.Bool })
+      {
+        $CastedPropertyColl.Add($StringProperty.Name, [System.Convert]::ToBoolean($APIObject.($StringProperty.Name)))
+      }
+      ( { $_ -in $StringPropertyColl.Xml })
+      {
+        $CastedPropertyColl.Add($StringProperty.Name, [xml]$APIObject.($StringProperty.Name))
+      }
+      ( { $_ -in $StringPropertyColl.Pscustomobject })
+      {
+        $CastedPropertyColl.Add($StringProperty.Name, [pscustomobject]$APIObject.($StringProperty.Name))
+      }
+      Default
+      {
+        $CastedPropertyColl.Add($StringProperty.Name, [String]$APIObject.($StringProperty.Name))
+      }
+    }
+  }
+  New-Object psobject -Property $CastedPropertyColl
+}
+$Result
+#>
 
 <#
 
