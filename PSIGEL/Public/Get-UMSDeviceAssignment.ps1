@@ -31,34 +31,27 @@
   {
     $UriArray = @($Computername, $TCPPort, $ApiVersion)
     $BaseURL = ('https://{0}:{1}/umsapi/v{2}/thinclients' -f $UriArray)
-  }
-  Process
-  {
     $Params = @{
       WebSession       = $WebSession
       Uri              = '{0}/{1}/assignments/profiles' -f $BaseURL, $Id
       Method           = 'Get'
       ContentType      = 'application/json'
-      Headers          = @{}
+      Headers          = @{ }
       SecurityProtocol = ($SecurityProtocol -join ',')
     }
-    $APIObjectColl = Invoke-UMSRestMethodWebSession @Params
-    $Result = foreach ($APIObject in $APIObjectColl)
-    {
-      $ProfileColl = foreach ($child in $APIObject)
-      {
-        $ProfileProperties = [ordered]@{
-          'Id'                 = [Int]$Id
-          'ReceiverId'         = [Int]$child.receiver.id
-          'ReceiverType'       = [String]$child.receiver.type
-          'AssigneeId'         = [Int]$child.assignee.id
-          'AssigneeType'       = [String]$child.assignee.type
-          'AssignmentPosition' = [Int]$child.assignmentPosition
-        }
-        New-Object psobject -Property $ProfileProperties
-      }
-      $ProfileColl
+    $PropertyColl = @{
+      'Int' = @(
+        'Id',
+        'Receiver.Id',
+        'Assignee.Id',
+        'AssignmentPosition'
+      )
     }
+  }
+  Process
+  {
+    $APIObjectColl = Invoke-UMSRestMethodWebSession @Params
+    $Result = Get-UMSPropertyCast -APIObjectColl $APIObjectColl -PropertyColl $PropertyColl
     $Result
   }
   End
