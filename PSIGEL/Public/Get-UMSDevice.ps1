@@ -35,9 +35,6 @@
     $UriArray = @($Computername, $TCPPort, $ApiVersion)
     $BaseURL = ('https://{0}:{1}/umsapi/v{2}/thinclients' -f $UriArray)
     $FilterString = New-UMSFilterString -Filter $Filter
-  }
-  Process
-  {
     $Params = @{
       WebSession       = $WebSession
       Method           = 'Get'
@@ -45,6 +42,42 @@
       Headers          = @{ }
       SecurityProtocol = ($SecurityProtocol -join ',')
     }
+    $PropertyColl = @{
+      'Int'            = @(
+        'batteryLevel',
+        'cpuSpeed',
+        'firmwareID',
+        'flashSize',
+        'id',
+        'memorySize',
+        'monitor1WeekOfManufacture',
+        'monitor1YearOfManufacture',
+        'monitor2WeekOfManufacture',
+        'monitor2YearOfManufacture',
+        'monitorSize1',
+        'monitorSize2',
+        'networkSpeed',
+        'parentID'
+      )
+      'Int64'          = @(
+        'totalUptime',
+        'totalUsagetime'
+      )
+      'Datetime'       = @(
+        'biosDate',
+        'lastBoottime'
+      )
+      'Bool'           = @(
+        'movedToBin',
+        'online'
+      )
+      'Pscustomobject' = @(
+        'shadowSecret'
+      )
+    }
+  }
+  Process
+  {
     Switch ($PsCmdlet.ParameterSetName)
     {
       'All'
@@ -58,96 +91,7 @@
         $APIObjectColl = Invoke-UMSRestMethodWebSession @Params
       }
     }
-
-    $Result = foreach ($APIObject in $APIObjectColl)
-    {
-      $Properties = [ordered]@{
-        'Id'         = [Int]$APIObject.id
-        'ObjectType' = [String]$APIObject.objectType
-        'UnitId'     = [String]$APIObject.unitID
-        'Mac'        = [String]$APIObject.mac
-        'Name'       = [String]$APIObject.name
-        'ParentId'   = [Int]$APIObject.parentID
-        'FirmwareId' = [Int]$APIObject.firmwareID
-        'LastIp'     = [String]$APIObject.lastIP
-        'MovedToBin' = [System.Convert]::ToBoolean($APIObject.movedToBin)
-      }
-      switch ($Filter)
-      {
-        online
-        {
-          $Properties += [ordered]@{
-            'Online' = [System.Convert]::ToBoolean($APIObject.online)
-          }
-        }
-        shadow
-        {
-          $Properties += [ordered]@{
-            'ShadowSecret' = $APIObject.shadowSecret
-          }
-        }
-        details
-        {
-          $Properties += [ordered]@{
-            'NetworkName'               = [String]$APIObject.networkName
-            'Site'                      = [String]$APIObject.site
-            'Comment'                   = [String]$APIObject.comment
-            'Department'                = [String]$APIObject.department
-            'CostCenter'                = [String]$APIObject.costCenter
-            'AssetID'                   = [String]$APIObject.assetID
-            'InServiceDate'             = [String]$APIObject.inServiceDate
-            'SerialNumber'              = [String]$APIObject.serialNumber
-            'ProductId'                 = [String]$APIObject.productId
-            'CpuSpeed'                  = [Int]$APIObject.cpuSpeed
-            'CpuType'                   = [String]$APIObject.cpuType
-            'DeviceType'                = [String]$APIObject.deviceType
-            'DeviceSerialNumber'        = [String]$APIObject.deviceSerialNumber
-            'OsType'                    = [String]$APIObject.osType
-            'FlashSize'                 = [Int]$APIObject.flashSize
-            'MemorySize'                = [Int]$APIObject.memorySize
-            'NetworkSpeed'              = [Int]$APIObject.networkSpeed
-            'GraphicsChipset0'          = [String]$APIObject.graphicsChipset0
-            'GraphicsChipset1'          = [String]$APIObject.graphicsChipset1
-            'MonitorVendor1'            = [String]$APIObject.monitorVendor1
-            'MonitorModel1'             = [String]$APIObject.monitorModel1
-            'MonitorSerialnumber1'      = [String]$APIObject.monitorSerialnumber1
-            'MonitorSize1'              = [Int]$APIObject.monitorSize1
-            'MonitorNativeResolution1'  = [String]$APIObject.monitorNativeResolution1
-            'Monitor1YearOfManufacture' = [Int]$APIObject.monitor1YearOfManufacture
-            'Monitor1WeekOfManufacture' = [Int]$APIObject.monitor1WeekOfManufacture
-            'MonitorVendor2'            = [String]$APIObject.monitorVendor2
-            'MonitorModel2'             = [String]$APIObject.monitorModel2
-            'MonitorSerialnumber2'      = [String]$APIObject.monitorSerialnumber2
-            'MonitorSize2'              = [Int]$APIObject.monitorSize2
-            'MonitorNativeResolution2'  = [String]$APIObject.monitorNativeResolution2
-            'Monitor2YearOfManufacture' = [Int]$APIObject.monitor2YearOfManufacture
-            'Monitor2WeekOfManufacture' = [Int]$APIObject.monitor2WeekOfManufacture
-            'BiosVendor'                = [String]$APIObject.biosVendor
-            'BiosVersion'               = [String]$APIObject.biosVersion
-            'TotalUsagetime'            = [Int64]$APIObject.totalUsagetime
-            'TotalUptime'               = [Int64]$APIObject.totalUptime
-            'BatteryLevel'              = [Int]$APIObject.batteryLevel
-          }
-          if ($APIObject.lastBoottime)
-          {
-            $Properties.Add('LastBootTime', [datetime]$APIObject.lastBoottime)
-          }
-          else
-          {
-            $Properties.Add('LastBootTime', '')
-          }
-          if ($APIObject.biosDate)
-          {
-            $Properties.Add('BiosDate', [datetime]$APIObject.biosDate)
-          }
-          else
-          {
-            $Properties.Add('BiosDate', '')
-          }
-        }
-      }
-      New-Object psobject -Property $Properties
-    }
+    $Result = Get-UMSPropertyCast -APIObjectColl $APIObjectColl -PropertyColl $PropertyColl
     $Result
   }
   End
