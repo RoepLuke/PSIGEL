@@ -22,65 +22,47 @@ function Get-UMSPropertyCast
   {
     $Result = foreach ($APIObject in $APIObjectColl)
     {
-      $CastedPropertyColl = @{ }
-      foreach ($StringProperty in $PropertyColl.String)
+      $CastedPropertyColl = [ordered]@{ }
+      foreach ($StringProperty in ($APIObject | Get-Member -MemberType NoteProperty | Sort-Object -Property Name))
       {
-        $Name = $StringProperty
-        if ($APIObject.($StringProperty))
+        $StringPropertyName = ($StringProperty.Name).Replace(($StringProperty.Name)[0], ([String]($StringProperty.Name)[0]).ToUpper())
+        if ([String]$APIObject.($StringPropertyName))
         {
-          $Value = [String]$APIObject.($StringProperty)
-          $CastedPropertyColl.Add($Name, $Value)
+          switch ($StringPropertyName)
+          {
+            ( { $_ -in $PropertyColl.Int })
+            {
+              $CastedPropertyColl.Add($StringPropertyName, [Int]$APIObject.($StringPropertyName))
+            }
+            ( { $_ -in $PropertyColl.Int64 })
+            {
+              $CastedPropertyColl.Add($StringPropertyName, [Int64]$APIObject.($StringPropertyName))
+            }
+            ( { $_ -in $PropertyColl.Datetime })
+            {
+              $CastedPropertyColl.Add($StringPropertyName, [System.Convert]::ToDateTime($APIObject.($StringPropertyName)))
+            }
+            ( { $_ -in $PropertyColl.Bool })
+            {
+              $CastedPropertyColl.Add($StringPropertyName, [System.Convert]::ToBoolean($APIObject.($StringPropertyName)))
+            }
+            ( { $_ -in $PropertyColl.Xml })
+            {
+              $CastedPropertyColl.Add($StringPropertyName, [xml]$APIObject.($StringPropertyName))
+            }
+            ( { $_ -in $PropertyColl.Pscustomobject })
+            {
+              $CastedPropertyColl.Add($StringPropertyName, [pscustomobject]$APIObject.($StringPropertyName))
+            }
+            Default
+            {
+              $CastedPropertyColl.Add($StringPropertyName, [String]$APIObject.($StringPropertyName))
+            }
+          }
         }
-      }
-      foreach ($IntProperty in $PropertyColl.Int)
-      {
-        $Name = $IntProperty
-        if ($APIObject.($IntProperty))
+        else
         {
-          $Value = [Int]$APIObject.($IntProperty)
-          $CastedPropertyColl.Add($Name, $Value)
-        }
-      }
-      foreach ($BoolProperty in $PropertyColl.Bool)
-      {
-        $Name = $BoolProperty
-        $Value = [System.Convert]::ToBoolean($APIObject.($BoolProperty))
-        $CastedPropertyColl.Add($Name, $Value)
-      }
-      foreach ($DatetimeProperty in $PropertyColl.Datetime)
-      {
-        $Name = $DatetimeProperty
-        if ($APIObject.($DatetimeProperty))
-        {
-          $Value = [System.Convert]::ToDateTime($APIObject.($DatetimeProperty))
-          $CastedPropertyColl.Add($Name, $Value)
-        }
-      }
-      foreach ($ArrayProperty in $PropertyColl.Array)
-      {
-        $Name = $ArrayProperty
-        if ($APIObject.($ArrayProperty))
-        {
-          $Value = [array]$APIObject.($ArrayProperty)
-          $CastedPropertyColl.Add($Name, $Value)
-        }
-      }
-      foreach ($XmlProperty in $PropertyColl.Xml)
-      {
-        $Name = $XmlProperty
-        if ($APIObject.($XmlProperty))
-        {
-          $Value = [xml]$APIObject.($XmlProperty)
-          $CastedPropertyColl.Add($Name, $Value)
-        }
-      }
-      foreach ($ObjectProperty in $PropertyColl.Object)
-      {
-        $Name = $ObjectProperty
-        if ($APIObject.($ObjectProperty))
-        {
-          $Value = [pscustomobject]$APIObject.($ObjectProperty)
-          $CastedPropertyColl.Add($Name, $Value)
+          $CastedPropertyColl.Add($StringPropertyName, $null)
         }
       }
       New-Object psobject -Property $CastedPropertyColl
