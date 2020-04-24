@@ -35,3 +35,4 @@ jobs:
 
       - name: Get PS Major Version
         run: $PSVersionTable.PSVersion.Major
+        shell: pwsh
