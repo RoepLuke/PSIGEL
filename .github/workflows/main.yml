@@ -36,3 +36,9 @@ jobs:
       - name: Get PS Major Version
         run: $PSVersionTable.PSVersion.Major
         shell: pwsh
+
+      - name: Get PS Edition multiline
+        run: |
+          $Test = Get-Variable -Name PSVersionTable -ValueOnly
+          $Test.PSEdition
+        shell: pwsh
