@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Get OS
-        run: [System.Environment]::OSVersion
+        run: ([System.Environment]::OSVersion)
 
       - name: Get PS Major Version
         run: $PSVersionTable.PSVersion.Major
