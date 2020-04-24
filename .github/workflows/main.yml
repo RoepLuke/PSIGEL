@@ -29,5 +29,9 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: cat /etc/os-release | grep 'VERSION='
 
+      - name: install PS7 (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: wget https://aka.ms/install-powershell.sh; sudo bash install-powershell.sh; rm install-powershell.sh
+
       - name: Get PS Major Version
         run: $PSVersionTable.PSVersion.Major
