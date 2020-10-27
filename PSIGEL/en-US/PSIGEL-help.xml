@@ -336,7 +336,7 @@ BiosDate                  : 01.12.2006 00:00:00</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -565,7 +565,7 @@ AssignmentPosition : 1</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSDeviceAssignment.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSDeviceAssignment.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -837,7 +837,7 @@ DirectoryChildren : {@{ObjectType=tcdirectory; Id=664}, @{ObjectType=tcdirectory
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSDeviceDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSDeviceDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1065,7 +1065,7 @@ AssignmentPosition : 1</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSDeviceDirectoryAssignment.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSDeviceDirectoryAssignment.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1341,7 +1341,7 @@ ObjectType        : profile</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSDirectoryRecursive.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSDirectoryRecursive.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1570,7 +1570,7 @@ Id Product    Version      FirmwareType
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSFirmware.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSFirmware.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1826,7 +1826,7 @@ ObjectType        : profile</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSProfile.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSProfile.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2089,7 +2089,7 @@ AssignmentPosition : 0</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSProfileAssignment.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSProfileAssignment.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2367,7 +2367,7 @@ DirectoryChildren : @{ObjectType=profile; Id=669}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSProfileDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSProfileDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2563,7 +2563,7 @@ Server             : igelrmserver:8443</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Get-UMSStatus.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Get-UMSStatus.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2870,7 +2870,7 @@ $PSDefaultParameterValues += @{
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Move-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Move-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -3177,7 +3177,7 @@ $PSDefaultParameterValues += @{
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Move-UMSDeviceDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Move-UMSDeviceDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -3484,7 +3484,7 @@ $PSDefaultParameterValues += @{
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Move-UMSProfile.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Move-UMSProfile.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -3791,7 +3791,7 @@ $PSDefaultParameterValues += @{
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Move-UMSProfileDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Move-UMSProfileDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4040,7 +4040,7 @@ $WebSession = New-UMSAPICookie -Computername 'igelrmserver' -Credential $Credent
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/New-UMSAPICookie.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/New-UMSAPICookie.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4631,7 +4631,7 @@ ParentId : 665</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/New-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/New-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4906,7 +4906,7 @@ Directory successfully inserted. 739 Leipzig</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/New-UMSDeviceDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/New-UMSDeviceDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5250,7 +5250,7 @@ Message                                Id ReceiverId ReceiverType
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/New-UMSProfileAssignment.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/New-UMSProfileAssignment.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5525,7 +5525,7 @@ Directory successfully inserted. 745 06</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/New-UMSProfileDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/New-UMSProfileDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5769,7 +5769,7 @@ D7588A4A667B3B76650245A8BF335036</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Remove-UMSAPICookie.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Remove-UMSAPICookie.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6104,7 +6104,7 @@ Offline deletion successful. 752</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Remove-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Remove-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6396,7 +6396,7 @@ Deletion successful. 687</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Remove-UMSDeviceDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Remove-UMSDeviceDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6686,7 +6686,7 @@ Deleted profile. 390</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Remove-UMSProfile.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Remove-UMSProfile.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7035,7 +7035,7 @@ deleted profile assignment.  69         71 tcdirectory</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Remove-UMSProfileAssignment.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Remove-UMSProfileAssignment.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7325,7 +7325,7 @@ Deletion successful. 230</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Remove-UMSProfileDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Remove-UMSProfileDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7629,7 +7629,7 @@ State    : SUCCESS</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Reset-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Reset-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7926,7 +7926,7 @@ State    : SUCCESS</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Restart-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Restart-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8223,7 +8223,7 @@ State    : SUCCESS</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Send-UMSDeviceSetting.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Send-UMSDeviceSetting.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8520,7 +8520,7 @@ State    : SUCCESS SUCCESS</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Start-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Start-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8817,7 +8817,7 @@ State    : SUCCESS</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Stop-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Stop-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -9320,7 +9320,7 @@ Update successful. 195</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Update-UMSDevice.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Update-UMSDevice.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -9639,7 +9639,7 @@ Updated directory successfully. 665</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Update-UMSDeviceDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Update-UMSDeviceDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -9959,7 +9959,7 @@ Update successful. 669</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Update-UMSProfile.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Update-UMSProfile.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -10279,7 +10279,7 @@ Updated directory successfully. 668</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/IGEL-Community/PSIGEL/Docs/Reference/Update-UMSProfileDirectory.md</maml:uri>
+        <maml:uri>https://github.com/IGEL-Community/PSIGEL/blob/master/Docs/Reference/Update-UMSProfileDirectory.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
