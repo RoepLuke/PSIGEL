@@ -218,7 +218,7 @@ Remove-UMSAPICookie
 D7588A4A667B3B76650245A8BF335036
 ```
 
-If we create the view to begin with and schedule the execution of the job just after the execution of the script, then we have created a simple update workflow for our devices. Notice: we don't bother with a reboot here, but rather let the update process start, when the devices a shutdown by the user or per policy.
+If we create the view to begin with and schedule the execution of the job just after the execution of the script, then we have created a simple update workflow for our devices. Notice: we don't bother with a reboot here, but rather let the update process start when the devices are shutdown by the user or per policy.
 
 - The complete script (with removed unnecessary output) as follows:
 
@@ -229,15 +229,12 @@ $PSDefaultParameterValues = @{
   '*-UMS*:Computername' = 'igelrmserver'
 }
 
-#create a websession
+#create a websession and add it to the default parameters
 $WebSession = New-UMSAPICookie -Credential (Import-Clixml -Path $CredPath)
 $PSDefaultParameterValues.Add('*-UMS*:WebSession', $WebSession)
 
-# get all firmwares
-$FirmwareColl = Get-UMSFirmware
-
-# get latest firmware
-$LatestFirmwareId = ($FirmwareColl | Sort-Object -Property Version -Descending |
+# get id of the latest firmware
+$LatestFirmwareId = (Get-UMSFirmware | Sort-Object -Property Version -Descending |
   Select-Object -First 1 ).Id
 
 # remove a comment "update" from all devices with the latest firmware
@@ -257,8 +254,9 @@ $UpdateDeviceColl | Update-UMSDevice -Comment 'update'
 $null = Remove-UMSAPICookie
 
 <#
-promptly after the execution of this script, a scheduled job "update on Shutdown"
-on a view for all devices with the comment "update" should start in the UMS.
+promptly after the execution of this script, a scheduled job
+"update on Shutdown" on a view for all devices with the comment
+"update" should be start in the UMS to complete the update workflow.
 #>
 ```
 
