@@ -25,7 +25,12 @@ elseif ($PSEdition -eq 'core' -and (-Not $IsWindows) )
 
 $WebSession = New-UMSAPICookie
 $PSDefaultParameterValues.Add('*-UMS*:WebSession', $WebSession)
-#<#
+
+Get-UMSStatus
+
+$null = Remove-UMSAPICookie -WebSession $WebSession
+
+<#
 #$Result = ''
 #$Result = Get-UMSDevice -Id 512
 #$Result = Get-UMSDevice
