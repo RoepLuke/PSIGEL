@@ -51,11 +51,11 @@ Tests Config
       ParameterSets    = @{
         Default = @{
           Expected = @{
-            RmGuiServerVersion = '6.3.130'
-            BuildNumber        = 44584
+            RmGuiServerVersion = '6.5.110'
+            BuildNumber        = 48194
             ActiveMqVersion    = '5.7.0'
-            DerbyVersion       = '10.12.1.1'
-            ServerUuid         = 'f30fb3a2-37d4-4cbb-b884-4f4060d3160e'
+            DerbyVersion       = '10.14.2.0'
+            ServerUuid         = 'c277f946-5efd-4114-954c-efcba0503d94'
             Server             = 'igelrmserver:8443'
           }
           Options  = @{
@@ -76,7 +76,7 @@ Tests Config
           }
           Expected = @{
             Message = 'Directory successfully inserted.'
-            Id      = 597
+            Id      = 608
             Name    = 'QA'
           }
           Options  = @{
@@ -108,14 +108,14 @@ Tests Config
             @{
               Mac      = '0A0000000007'
               Message  = 'Device successfully inserted.'
-              Id       = 598
+              Id       = 609
               Name     = '007'
               ParentId = -1
             }
             @{
               Mac      = '0A0000000008'
               Message  = 'Device successfully inserted.'
-              Id       = 599
+              Id       = 610
               Name     = '008'
               ParentId = - 1
             }
@@ -138,7 +138,7 @@ Tests Config
           }
           Expected = @{
             Message = 'Directory successfully inserted.'
-            Id      = 600
+            Id      = 611
             Name    = 'Devices'
           }
           Options  = @{
@@ -328,12 +328,12 @@ Tests Config
             DestId = 514 # A_Development
           }
           Params3  = @{
-            Id     = 598 # 007
-            DestId = 597 # QA
+            Id     = 609 # 007
+            DestId = 608 # QA
           }
           Params4  = @{
-            Id     = 599 # 008
-            DestId = 597 # QA
+            Id     = 610 # 008
+            DestId = 608 # QA
           }
           Expected = @(
             @{
@@ -345,11 +345,11 @@ Tests Config
               Message = 'successful.'
             }
             @{
-              Id      = 598
+              Id      = 609
               Message = 'successful.'
             }
             @{
-              Id      = 599
+              Id      = 610
               Message = 'successful.'
             }
           )
@@ -367,7 +367,7 @@ Tests Config
       ParameterSets    = @{
         Default = @{
           Params1  = @{
-            Id     = 597 # QA
+            Id     = 608 # QA
             DestId = 511 # Augsburg
           }
           Params2  = @{
@@ -376,7 +376,7 @@ Tests Config
           }
           Expected = @(
             @{
-              Id      = 597
+              Id      = 608
               Message = 'successful.'
             }
             @{
@@ -448,7 +448,7 @@ Tests Config
             Name = 'BR_Development'
           }
           Params2  = @{
-            Id   = 597 # QA
+            Id   = 608 # QA
             Name = 'A_QA'
           }
           Expected = @(
@@ -457,7 +457,7 @@ Tests Config
               Message = 'Updated directory successfully.'
             }
             @{
-              Id      = 597
+              Id      = 608
               Message = 'Updated directory successfully.'
             }
           )
@@ -483,11 +483,11 @@ Tests Config
             Name = 'A-DEV-010'
           }
           Params3  = @{
-            Id   = 598 # 007
+            Id   = 609 # 007
             Name = 'A-QA-007'
           }
           Params4  = @{
-            Id   = 599 # 008
+            Id   = 610 # 008
             Name = 'A-QA-008'
           }
           Expected = @(
@@ -500,11 +500,11 @@ Tests Config
               Message = 'Update successful.'
             }
             @{
-              Id      = 598
+              Id      = 609
               Message = 'Update successful.'
             }
             @{
-              Id      = 599
+              Id      = 610
               Message = 'Update successful.'
             }
           )
@@ -778,21 +778,21 @@ Tests Config
             @{
               Mac      = '0A00000000AA'
               Message  = 'Device successfully inserted.'
-              Id       = 601
+              Id       = 612
               Name     = 'NewDevice01'
               ParentId = -1
             }
             @{
-              Id      = 601
+              Id      = 612
               Message = 'successful.'
             }
             @{
               Message = 'Update successful.'
-              Id      = 601
+              Id      = 612
             }
             @{
               FirmwareId = 1
-              Id         = 601
+              Id         = 612
               LastIp     = ''
               Mac        = '0A00000000AA'
               MovedToBin = 'False'
@@ -802,32 +802,32 @@ Tests Config
               UnitId     = '0A00000000AA'
             }
             @{
-              Id      = 601
+              Id      = 612
               Mac     = '0A00000000AA'
               Message = 'OK.'
               State   = 'SUCCESS'
             }
             @{
-              Id      = 601
+              Id      = 612
               Mac     = '0A00000000AA'
               Message = 'Found no IP address for device.'
               State   = 'FAILED'
             }
             @{
-              Id      = 601
+              Id      = 612
               Mac     = '0A00000000AA'
               Message = 'Found no IP address for device.'
               State   = 'FAILED'
             }
             @{
-              Id      = 601
+              Id      = 612
               Mac     = '0A00000000AA'
               Message = 'Found no IP address for device.'
               State   = 'FAILED'
             }
             @{
               Message = 'Offline deletion successful.'
-              Id      = 601
+              Id      = 612
             }
           )
           Options      = @{
@@ -851,21 +851,21 @@ Tests Config
             @{
               Mac      = '0A00000000AB'
               Message  = 'Device successfully inserted.'
-              Id       = 602
+              Id       = 613
               Name     = 'NewDevice02'
               ParentId = -1
             }
             @{
-              Id      = 602
+              Id      = 613
               Message = 'successful.'
             }
             @{
               Message = 'Update successful.'
-              Id      = 602
+              Id      = 613
             }
             @{
               FirmwareId = 1
-              Id         = 602
+              Id         = 613
               LastIp     = ''
               Mac        = '0A00000000AB'
               MovedToBin = 'False'
@@ -875,32 +875,32 @@ Tests Config
               UnitId     = '0A00000000AB'
             }
             @{
-              Id      = 602
+              Id      = 613
               Mac     = '0A00000000AB'
               Message = 'OK.'
               State   = 'SUCCESS'
             }
             @{
-              Id      = 602
+              Id      = 613
               Mac     = '0A00000000AB'
               Message = 'Found no IP address for device.'
               State   = 'FAILED'
             }
             @{
-              Id      = 602
+              Id      = 613
               Mac     = '0A00000000AB'
               Message = 'Found no IP address for device.'
               State   = 'FAILED'
             }
             @{
-              Id      = 602
+              Id      = 613
               Mac     = '0A00000000AB'
               Message = 'Found no IP address for device.'
               State   = 'FAILED'
             }
             @{
               Message = 'Offline deletion successful.'
-              Id      = 602
+              Id      = 613
             }
           )
           Options      = @{
@@ -928,20 +928,20 @@ Tests Config
           Expected     = @(
             @{
               Message = 'Directory successfully inserted.'
-              Id      = 603
+              Id      = 614
               Name    = 'NewDeviceDirectory01'
             }
             @{
-              Id      = 603
+              Id      = 614
               Message = 'successful.'
             }
             @{
               Message = 'Updated directory successfully.'
-              Id      = 603
+              Id      = 614
             }
             @{
               Message = 'Deletion successful.'
-              Id      = 603
+              Id      = 614
             }
           )
           Options      = @{
@@ -961,20 +961,20 @@ Tests Config
           Expected     = @(
             @{
               Message = 'Directory successfully inserted.'
-              Id      = 604
+              Id      = 615
               Name    = 'NewDeviceDirectory02'
             }
             @{
-              Id      = 604
+              Id      = 615
               Message = 'successful.'
             }
             @{
               Message = 'Updated directory successfully.'
-              Id      = 604
+              Id      = 615
             }
             @{
               Message = 'Deletion successful.'
-              Id      = 604
+              Id      = 615
             }
           )
           Options      = @{
@@ -1061,20 +1061,20 @@ Tests Config
           Expected     = @(
             @{
               Message = 'Directory successfully inserted.'
-              Id      = 605
+              Id      = 616
               Name    = 'NewProfileDirectory01'
             }
             @{
-              Id      = 605
+              Id      = 616
               Message = 'successful.'
             }
             @{
               Message = 'Updated directory successfully.'
-              Id      = 605
+              Id      = 616
             }
             @{
               Message = 'Deletion successful.'
-              Id      = 605
+              Id      = 616
             }
           )
           Options      = @{
@@ -1094,20 +1094,20 @@ Tests Config
           Expected     = @(
             @{
               Message = 'Directory successfully inserted.'
-              Id      = 606
+              Id      = 618
               Name    = 'NewProfileDirectory02'
             }
             @{
-              Id      = 606
+              Id      = 618
               Message = 'successful.'
             }
             @{
               Message = 'Updated directory successfully.'
-              Id      = 606
+              Id      = 618
             }
             @{
               Message = 'Deletion successful.'
-              Id      = 606
+              Id      = 618
             }
           )
           Options      = @{
@@ -1242,23 +1242,23 @@ Tests Config
               MovedToBin = 'False'
             }
             @{
-              Id         = 598
+              Id         = 609
               ObjectType = 'tc'
               UnitId     = '0A0000000007'
               Mac        = '0A0000000007'
               Name       = 'A-QA-007'
-              ParentId   = 597
+              ParentId   = 608
               FirmwareId = 1
               LastIp     = ''
               MovedToBin = 'False'
             }
             @{
-              Id         = 599
+              Id         = 610
               ObjectType = 'tc'
               UnitId     = '0A0000000008'
               Mac        = '0A0000000008'
               Name       = 'A-QA-008'
-              ParentId   = 597
+              ParentId   = 608
               FirmwareId = 1
               LastIp     = ''
               MovedToBin = 'False'
@@ -1373,7 +1373,7 @@ Tests Config
               ObjectType = 'tcdirectory'
             }
             @{
-              Id         = 597
+              Id         = 608
               Name       = 'A_QA'
               ParentId   = 511
               MovedToBin = 'False'
@@ -1587,7 +1587,7 @@ Tests Config
               ObjectType = 'profiledirectory'
             }
             @{
-              Id         = 600
+              Id         = 611
               Name       = 'Devices'
               ParentId   = -2
               MovedToBin = 'False'
@@ -1723,7 +1723,7 @@ Tests Config
               Id                 = 577
               ReceiverId         = 502
               ReceiverType       = 'tcdirectory'
-              AssigneeId         = 529
+              AssigneeId         = 535
               AssigneeType       = 'profile'
               AssignmentPosition = 2
             }
@@ -1731,7 +1731,7 @@ Tests Config
               Id                 = 577
               ReceiverId         = 502
               ReceiverType       = 'tcdirectory'
-              AssigneeId         = 535
+              AssigneeId         = 529
               AssigneeType       = 'profile'
               AssignmentPosition = 3
             }
@@ -1765,7 +1765,7 @@ Tests Config
               Id                 = 504
               ReceiverId         = 502
               ReceiverType       = 'tcdirectory'
-              AssigneeId         = 535
+              AssigneeId         = 529
               AssigneeType       = 'profile'
               AssignmentPosition = 1
             }
@@ -1773,7 +1773,7 @@ Tests Config
               Id                 = 504
               ReceiverId         = 502
               ReceiverType       = 'tcdirectory'
-              AssigneeId         = 529
+              AssigneeId         = 535
               AssigneeType       = 'profile'
               AssignmentPosition = 2
             }
@@ -1819,7 +1819,7 @@ Tests Config
               ObjectType = 'tcdirectory'
             }
             @{
-              Id         = 597
+              Id         = 608
               Name       = 'A_QA'
               ParentId   = 511
               MovedToBin = 'False'
@@ -1882,23 +1882,23 @@ Tests Config
               MovedToBin = 'False'
             }
             @{
-              Id         = 598
+              Id         = 609
               ObjectType = 'tc'
               UnitId     = '0A0000000007'
               Mac        = '0A0000000007'
               Name       = 'A-QA-007'
-              ParentId   = 597
+              ParentId   = 608
               FirmwareId = 1
               LastIp     = ''
               MovedToBin = 'False'
             }
             @{
-              Id         = 599
+              Id         = 610
               ObjectType = 'tc'
               UnitId     = '0A0000000008'
               Mac        = '0A0000000008'
               Name       = 'A-QA-008'
-              ParentId   = 597
+              ParentId   = 608
               FirmwareId = 1
               LastIp     = ''
               MovedToBin = 'False'
