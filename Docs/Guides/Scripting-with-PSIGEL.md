@@ -2,11 +2,18 @@
 
 ## Table of contents
 
-- [Installation](#installation)
-- [Setup](#setup)
-- [Configuration](#configuration)
-- [Authentication](#authentication)
-- [Creating a script](#creating-a-script)
+- [Scripting with PSIGEL](#scripting-with-psigel)
+  - [Table of contents](#table-of-contents)
+  - [Installation](#installation)
+    - [Powershell Gallery](#powershell-gallery)
+    - [Github Repository](#github-repository)
+      - [Clone](#clone)
+      - [Release](#release)
+  - [Setup](#setup)
+    - [Import the module](#import-the-module)
+  - [Configuration](#configuration)
+  - [Authentication](#authentication)
+  - [Creating a script](#creating-a-script)
 
 ## Installation
 
@@ -102,22 +109,24 @@ Id Product    Version    FirmwareType
  2 IGEL OS 11 11.3.110.1 LX
 ```
 
-Now lets find out which is the Id of the latest firmware:
+Now lets find out which is the latest firmware:
 
 ```powershell
-C:\> $LatestFirmwareId = ($FirmwareColl | Sort-Object -Property Version -Descending |
-  Select-Object -First 1 ).Id
+C:\> $LatestFirmware = $FirmwareColl | Sort-Object -Property Version -Descending |
+  Select-Object -First 1
 
-C:\> $LatestFirmwareId
+C:\> $LatestFirmware
 
-2
+Id Product    Version    FirmwareType
+-- -------    -------    ------------
+ 2 IGEL OS 11 11.3.110.1 LX
 ```
 
 Lets find out all online devices that are not on the latest firmware:
 
 ```powershell
 C:\> $UpdateDeviceColl = Get-UMSDevice -Filter online |
-  Where-Object { $_.Online -eq $false -and $_.FirmwareId -ne $LatestFirmwareId }
+  Where-Object { $_.Online -eq $true -and $_.FirmwareId -ne $LatestFirmware.Id }
 C:\> $UpdateDeviceColl
 
 Id         : 505
@@ -129,7 +138,7 @@ ParentId   : 504
 FirmwareId : 1
 LastIp     :
 MovedToBin : False
-Online     : False
+Online     : True
 
 ...
 
@@ -142,7 +151,7 @@ ParentId   : 520
 FirmwareId : 1
 LastIp     :
 MovedToBin : False
-Online     : False
+Online     : True
 ```
 
 Using the pipeline we set the description "update" to those devices:
@@ -198,7 +207,7 @@ After the reboot we remove the comment "update" from all devices that now have t
 
 ```powershell
 C:\> Get-UMSDevice -Filter details | Where-Object {
-    $_.Comment -eq 'update' -and $_.FirmwareId -eq $LatestFirmwareId
+    $_.Comment -eq 'update' -and $_.FirmwareId -eq $LatestFirmware.Id
     } | Update-UMSDevice -Comment ''
 
 Message : Update successful.
@@ -233,18 +242,18 @@ $PSDefaultParameterValues = @{
 $WebSession = New-UMSAPICookie -Credential (Import-Clixml -Path $CredPath)
 $PSDefaultParameterValues.Add('*-UMS*:WebSession', $WebSession)
 
-# get id of the latest firmware
-$LatestFirmwareId = (Get-UMSFirmware | Sort-Object -Property Version -Descending |
-  Select-Object -First 1 ).Id
+# get the latest firmware
+$LatestFirmware = Get-UMSFirmware | Sort-Object -Property Version -Descending |
+  Select-Object -First 1
 
 # remove a comment "update" from all devices with the latest firmware
 $null = Get-UMSDevice -Filter details | Where-Object {
-  $_.Comment -eq 'update' -and $_.FirmwareId -eq $LatestFirmwareId
+  $_.Comment -eq 'update' -and $_.FirmwareId -eq $LatestFirmware.Id
 } | Update-UMSDevice -Comment ''
 
 # get all online devices that do not have the latest firmware
 $UpdateDeviceColl = Get-UMSDevice -Filter online | Where-Object {
-  $_.Online -eq $false -and $_.FirmwareId -ne $LatestFirmwareId
+  $_.Online -eq $true -and $_.FirmwareId -ne $LatestFirmware.Id
 }
 
 # set a comment "update" to all devices with not the latest firmware
