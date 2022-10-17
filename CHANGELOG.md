@@ -6,6 +6,7 @@
 
 * added support for networkadapters and deviceattributes to Get-UMSDevice
 * added support for deviceattributes to Update-UMSDevice
+* added support for MasterProfiles with Get-UMSMasterProfile, Get-UMSMasterProfileDirectory and Get-UMSMasterProfileAssignments
 
 ### Changed
 
